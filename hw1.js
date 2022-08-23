@@ -112,11 +112,11 @@ console.log('Не кратно');
 let num1 = Number(prompt('Введите Ваш среднй балл'));
 let result = num1;
 
-if (1 <= result <= 4){
-console.log('Двоечник, иди учись!');
-} else if (5 <= result <= 8) {
+if (1 <= result & result <= 4){
+    console.log('Двоечник, иди учись!');
+} else if (5 <= result & result <= 8) {
 console.log('Неплохо, но давай еще поднажмем!');
-} else if (9 <= result <= 10) {
+} else if (9 <= result & result <= 10) {
 console.log('Ого, да ты настоящий отличник!');
 }
 
@@ -134,17 +134,17 @@ console.log('Ого, да ты настоящий отличник!');
 let num1 = Number(prompt('Введите Ваш балл за экзамен (от 0 до 100)'));
 let num2 = Number(prompt('Введите количество выполненных проектов (от 0 и больше)'));
 
-if (num1 > 90, num2 > 10){
-    let result == 100;
+if (num1 > 90 || num2 > 10){
+    let result = 100;
     console.log(result);
-} else if (num1 > 75, num2 > 5){
-    let result == 90;
+} else if (num1 > 75 || num2 > 5){
+    let result = 90;
     console.log(result);
-} else if (num1 > 50, num2 > 2){
-    let result == 75;
+} else if (num1 > 50 || num2 > 2){
+    let result = 75;
     console.log(result);
 } else {
-    let result == 0;
+    let result = 0;
     console.log(result);
 }
 
@@ -161,7 +161,7 @@ let cost = 40;
 if ( days >= 7){
     let totalCost = cost * days - 50;
     console.log(totalCost);
-} else if (3 <= days <= 6){
+} else if (days <= 3 || days <= 6){
     let totalCost = cost * days - 20;
     console.log(totalCost);
 }
