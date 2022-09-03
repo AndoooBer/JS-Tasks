@@ -26,13 +26,6 @@ for(let i = 0; i < 10; i++){
     console.log(result);
 }
 
-2-й вариант
-
-
-for(let i = 10; i <= 20; i++){
-    console.log(i);
-}
-
 
 // Задание 3
 // Увеличивая счетчик цикла на 2, нужно 5 раз:
@@ -42,7 +35,7 @@ for(let i = 10; i <= 20; i++){
 // - проверять, равно ли это число 10. Если равно, выводить "Равно 10". Иначе выводить "Не равно 10"
 
 
-for(let i = 0; i < 5; i++){
+for(let i = 0; i < 10; i += 2){
     let num = +prompt();
     if(num === 10){
         console.log('Равно 10');
@@ -56,8 +49,6 @@ for(let i = 0; i < 5; i++){
 // Вывести в консоль квадраты чисел от 0 до 100 (не включая 100) - т.е. вывести числа 0, 1, 4, 9, 16...
 
 // * Задавать количество чисел, которые нужно вывести, при помощи функции prompt.
-
-let num = Number(prompt('Введите число'));
 
 let iterations = +prompt ('Введите число');
 for (let i = 0; i < iterations; i++){
@@ -102,19 +93,14 @@ while (i < 3) {
 // Задание 7
 // Переписать задание 4 в виде функции. Т.е. описать функцию, которая выводит квадраты чисел из заданного диапазона (диапазон будет попадать в функцию как аргументы).
 
-
-
-function outputSquare(){
-    let num = Number(prompt('Введите число'));
-    
-    let iterations = +prompt ('Введите число');
+const outputSquare = (iterations) => {
     for (let i = 0; i < iterations; i++){
-        if (i * i < 100)
+        if (i * i < 100);
         console.log(i * i); 
-    }
+    }    
 }
 
-outputSquare()
+outputSquare(6);
 
 
 // Задание 8
@@ -132,21 +118,19 @@ outputSquare()
 // Одна функция может вызывать другую функцию
 
 
-
 function getRandomInteger(min, max) {
+    min = 0;
+    max = 255;
     return Math.floor(Math.random() * (max - min)) + min;
-    }
+}
 
-function getRandomRGB(getRandomInteger) {
-    let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
-    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
- console.log(bgColor);
-  
-    document.body.style.background = bgColor;
-    }
-    getRandomRGB();
+const getRandomRGB = () => {
+    return `rgb(${getRandomInteger()},${getRandomInteger()},${getRandomInteger()})`;
+} 
+
+let result = getRandomRGB();
+
+console.log(result);
 
 
 // Задание 9
@@ -160,11 +144,27 @@ function getRandomRGB(getRandomInteger) {
 // "1 integer"
 // "1.5 decimal"
 // "2 integer"
-
 // "2.5 decimal"
 
-function integerN(){
+const isInteger = (n) => {
     for (let i = 1; i < n; i+=0.5){
-        n += i;
+        if (Number.isInteger(i)) {
+            console.log(`${i} integer`);
+        } else {
+            console.log(`${i} decimal`);
+        }
     }
 }
+
+isInteger(3);
+
+
+
+
+// Написать функцию isInteger(x), которая определяет, является ли число целым, и возвращает true либо false.
+
+
+const isInteger = (x) => (Number.isInteger(x) ? true : false);
+
+let x = 5;
+console.log(isInteger(x));
